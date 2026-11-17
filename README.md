@@ -39,7 +39,7 @@ OpenAI-compatible upstream
 pip install -e .
 set OPENAI_MCP_UPSTREAM_BASE_URL=http://127.0.0.1:8080/v1
 set OPENAI_MCP_MODEL=my-model
-python -m openai_mcp_bridge.server
+python -m openai_mcp_bridge
 ```
 
 Default MCP endpoint:
@@ -65,11 +65,12 @@ Calls the configured upstream `/v1/models` endpoint.
 ## Offline smoke test
 
 ```bash
+python -m unittest tests.test_bridge -v
 python -m tests.smoke_test
 python -m tests.e2e_mcp_test
 ```
 
-The test launches a local fake OpenAI-compatible server and validates both health and chat-completion handling.
+The validation suite checks configuration/input guards, then launches a local fake OpenAI-compatible server for adapter smoke testing and a real Streamable HTTP MCP client/server round trip.
 
 ## Configuration
 
