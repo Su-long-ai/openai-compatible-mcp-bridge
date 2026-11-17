@@ -66,6 +66,7 @@ Calls the configured upstream `/v1/models` endpoint.
 
 ```bash
 python -m tests.smoke_test
+python -m tests.e2e_mcp_test
 ```
 
 The test launches a local fake OpenAI-compatible server and validates both health and chat-completion handling.
