@@ -36,7 +36,7 @@ OpenAI-compatible upstream
 ## Quick start
 
 ```bash
-pip install -e .
+pip install -e ".[dev]"
 set OPENAI_MCP_UPSTREAM_BASE_URL=http://127.0.0.1:8080/v1
 set OPENAI_MCP_MODEL=my-model
 python -m openai_mcp_bridge
@@ -66,6 +66,7 @@ Calls the configured upstream `/v1/models` endpoint.
 
 ```bash
 python -m unittest tests.test_bridge -v
+ruff check src tests
 python -m tests.smoke_test
 python -m tests.e2e_mcp_test
 ```

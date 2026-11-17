@@ -14,5 +14,15 @@ dependencies = [
 license = {text = "MIT"}
 authors = [{name = "Sulong"}]
 
+[project.optional-dependencies]
+dev = ["ruff>=0.6"]
+
+[project.urls]
+Repository = "https://github.com/Su-long-ai/openai-compatible-mcp-bridge"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
