@@ -83,6 +83,10 @@ The validation suite checks configuration/input guards, then launches a local fa
 | `OPENAI_MCP_HOST` | `127.0.0.1` |
 | `OPENAI_MCP_PORT` | `8787` |
 
+## Security boundary
+
+The bridge binds to `127.0.0.1` by default. Exposing it beyond localhost requires an authenticated HTTPS boundary, request/rate limits and an explicit data-retention policy. See [`SECURITY.md`](SECURITY.md).
+
 ## Scope
 
 This is an adapter, not a model host. The upstream service is responsible for authentication, model serving, rate limits, and provider-specific behavior.
